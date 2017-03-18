@@ -1,33 +1,44 @@
-    .icon {
-    position: relative;
-    display: inline-block;
-    width: 8em;
-    height: 8em;
-    vertical-align: middle;
-    }
+body {
+  font-family: "Open Sans",sans-serif;
+  font-size: 18px;
+}
 
-    h1, h2{
-    	font-family: Velino,Times New Roman,serif;
-        text-transform: none;
-    }
+h1, h2 {
+  font-family: "Velino", "Times New Roman", serif;
+  text-transform: none;
+}
 
-    h2{
-        font-style: italic;
-        border-bottom: 1px solid black;
-        font-size: 36px;
-    }
+h2 {
+  font-style: italic;
+  border-bottom: 1px solid black;
+  font-size: 36px;
+}
 
-    h4{
-        text-transform: none;
-    }
+h4 {
+  text-transform: none;
+}
 
-    body{
-        font-family: "Open Sans",sans-serif;
-        font-size: 18px;
-    }
+.icon {
+  position: relative;
+  display: inline-block;
+  width: 8em;
+  height: 8em;
+  vertical-align: middle;
+}
 
-    
-    #programme{
-       
-    }
-
+.iframe-container {
+  position: relative;
+  padding-bottom: 75%;
+  padding-top: 30px;
+  height: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling:touch;
+  border: solid black 1px;
+}
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
