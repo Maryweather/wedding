@@ -35,10 +35,38 @@ h4 {
   -webkit-overflow-scrolling:touch;
   border: solid black 1px;
 }
+
 .iframe-container iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.jumbotron {
+  background: url(img/jumbo1.jpg);
+  background-size: cover;
+  height:500px;
+  color: #fff;
+}
+
+.seigaiha {
+  background: url(img/seigaiha.png);
+}
+
+.asanoha {
+  background: url(img/asanoha.png);
+}
+
+.greyfloral {
+  background: url(img/greyfloral.png);
+}
+
+.sakura {
+  background: url(img/sakura.png);
+}
+
+.greenpastel {
+  background: url(img/greenpastel.jpg);
 }
