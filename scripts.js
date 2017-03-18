@@ -32,7 +32,7 @@ function updateCountdown() {
 
   if (distance < 0) {
     clearInterval(interval);
-    $weddingCountdown.text( "" );
+    $weddingCountdown.text( "..." );
   }
 }
 
