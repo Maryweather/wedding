@@ -18,6 +18,18 @@ h4 {
   text-transform: none;
 }
 
+a, a.active, a:active, a:focus, a:hover, .navbar-inverse .navbar-nav>li>a.active {
+  color: lightpink;
+}
+
+::selection {
+  background: lightpink;
+}
+
+::-moz-selection {
+  background: lightpink;
+}
+
 .icon {
   position: relative;
   display: inline-block;

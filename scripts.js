@@ -10,6 +10,21 @@ $( "a.page-scroll" ).click(function( e ) {
   });
 });
 
+$( document ).scroll(function(e) {
+  var screenTop = window.pageYOffset + 10;
+
+  $( "section" ).each(function() {
+    var sectionTop = $( this ).offset().top;
+    var sectionBottom = sectionTop + $( this ).height();
+
+    if ( sectionTop < screenTop && sectionBottom > screenTop ) {
+      window.location.hash = $( this ).prop( "id" );
+      $( "a[href^='#']" ).removeClass( "active" );
+      $( "a[href^='" + window.location.hash + "']" ).addClass( "active" );
+    }
+  });
+});
+
 var weddingDate = new Date("June 5, 2017 13:45:00").getTime();
 var $weddingCountdown = $( "#wedding-countdown" );
 
