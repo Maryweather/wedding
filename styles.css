@@ -79,6 +79,8 @@ a, a.active, a:active, a:focus, a:hover, .navbar-inverse .navbar-nav>li>a.active
   background: url(img/sakura.png);
 }
 
-.greenpastel {
-  background: url(img/greenpastel.jpg);
+.menu {
+  background: url(img/dinner-bg.jpg);
+  background-size: cover; 
+  color: #000;
 }
