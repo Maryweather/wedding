@@ -1,29 +1,39 @@
+var hashEnabled = true;
+
+function updateHash(hash) {
+  history.replaceState && history.replaceState( null, null, hash );
+  $( "a[href^='#']" ).removeClass( "active" );
+  hash === '#' || $( "a[href^='" + hash + "']" ).addClass( "active" );
+}
+
 $( "a.page-scroll" ).click(function( e ) {
   var hash = this.hash;
 
   e.preventDefault();
+  hashEnabled = false;
 
   $( "html, body" ).animate({
     scrollTop: $( hash ).offset().top,
   }, 300, function() {
-    window.location.hash = hash;
+    hashEnabled = true;
+    updateHash(hash);
   });
 });
 
 $( document ).scroll(function( e ) {
   var screenTop = window.pageYOffset + 10;
 
-  $( "section" ).each(function() {
-    var sectionTop = $( this ).offset().top;
-    var sectionBottom = sectionTop + $( this ).height();
-    var hash = "#" + $( this ).prop( "id" );
+  if (hashEnabled) {
+    $( "section" ).each(function() {
+      var sectionTop = $( this ).offset().top;
+      var sectionBottom = sectionTop + $( this ).height();
+      var hash = "#" + $( this ).prop( "id" );
 
-    if ( sectionTop < screenTop && sectionBottom > screenTop && window.location.hash !== hash ) {
-      history.replaceState && history.replaceState( null, null, hash );
-      $( "a[href^='#']" ).removeClass( "active" );
-      hash === '#' || $( "a[href^='" + hash + "']" ).addClass( "active" );
-    }
-  });
+      if ( sectionTop < screenTop && sectionBottom > screenTop && window.location.hash !== hash ) {
+        updateHash(hash);
+      }
+    });
+  }
 });
 
 var weddingDate = new Date( "June 5, 2017 13:45:00" ).getTime();
