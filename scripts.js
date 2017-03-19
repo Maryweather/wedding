@@ -11,7 +11,7 @@ $( "a.page-scroll" ).click(function( e ) {
 });
 
 $( document ).scroll(function( e ) {
-  var screenTop = window.pageYOffset;
+  var screenTop = window.pageYOffset + 10;
 
   $( "section" ).each(function() {
     var sectionTop = $( this ).offset().top;
